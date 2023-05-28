@@ -18,11 +18,12 @@ function App() {
   //   copyright : "MyCopyright"
   // }
   const [name, setName] = useState("Hero")
+  const [viewPage, setViewPage] = useState(true)
 
   return (
     <div>
-      <Header name={name} setName={setName}></Header>
-      <Footer name={name}></Footer>
+      <Header name={name} setName={setName } setViewPage={setViewPage} viewPage={viewPage}></Header>
+      {/* <Footer name={name}></Footer> */}
 
       {/* <Contactus contactDetails={contactDetails}></Contactus> */}
     </div>
