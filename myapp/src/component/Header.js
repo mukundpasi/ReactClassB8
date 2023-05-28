@@ -1,18 +1,19 @@
 import React from "react";
 // import "./Header.css";
-import Footer from "./Footer";
+import Title from "./subcomponent/Title";
 
-export default function Header({name, setName }) {
+export default function Header({ name, setName, viewPage, setViewPage }) {
   function handleClick() {
-    setName("Herovired")
+    setName("Herovired");
+    setViewPage(false);
   }
-  
+
   return (
     <>
       <div>
         this is my header name is : {name}
         <button onClick={handleClick}>Change Name</button>
-
+        {viewPage ? <Title></Title> : null}
       </div>
     </>
   );
