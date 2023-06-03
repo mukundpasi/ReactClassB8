@@ -1,6 +1,7 @@
 import React, {useState} from "react";
 import './App.css';
 import Hello from './component/Hello';
+import LandingPage from './component/LandingPage';
 import Header from './component/Header';
 import Footer from "./component/Footer";
 import Contactus from './component/Contacts';
@@ -22,10 +23,11 @@ function App() {
 
   return (
     <div>
-      <Header name={name} setName={setName } setViewPage={setViewPage} viewPage={viewPage}></Header>
+      {/* <Header name={name} setName={setName } setViewPage={setViewPage} viewPage={viewPage}></Header> */}
       {/* <Footer name={name}></Footer> */}
 
       {/* <Contactus contactDetails={contactDetails}></Contactus> */}
+      <LandingPage></LandingPage>
     </div>
   );
 }
