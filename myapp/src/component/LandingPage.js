@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 export default function LandingPage() {
   const [counter, setCounter] = useState(0);
@@ -27,16 +28,25 @@ export default function LandingPage() {
   console.log("222222222222222");
 
   return (
-    <div>
+    <div className="row">
       {product.length !== 0 ? (
         product.map((element) => (
-          <div className="card">
-            <div>
-              Image : {element.thumbnail}{" "}
-              <img src={element.thumbnail} alt="Product Thumbnail" />
+          <div className="col-md-3" key={element.id}>
+            <div className="card">
+              <div className="card-body">
+                <div className="card-title">
+                  <img
+                    src={element.thumbnail}
+                    alt="Product Thumbnail"
+                    style={{ width: "200px", height: "200px" }}
+                  />
+                </div>
+                <div className="card-text">
+                  <div>Product Title: {element.title}</div>
+                  <div>Product Brand: {element.brand}</div>
+                </div>
+              </div>
             </div>
-            <div>Product Title : {element.title}</div>
-            <div>Product Brand : {element.brand}</div>
           </div>
         ))
       ) : (
