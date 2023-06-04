@@ -1,10 +1,11 @@
-import React, {useState} from "react";
-import './App.css';
-import Hello from './component/Hello';
-import LandingPage from './component/LandingPage';
-import Header from './component/Header';
+import React, { useState } from "react";
+import "./App.css";
+import Hello from "./component/Hello";
+import LandingPage from "./component/LandingPage";
+import Header from "./component/Header";
 import Footer from "./component/Footer";
-import Contactus from './component/Contacts';
+import Contactus from "./component/Contacts";
+import { Routes, Route } from "react-router-dom";
 
 function App() {
   // const contactDetails = {
@@ -18,8 +19,8 @@ function App() {
   //   age :"30",
   //   copyright : "MyCopyright"
   // }
-  const [name, setName] = useState("Hero")
-  const [viewPage, setViewPage] = useState(true)
+  const [name, setName] = useState("Hero");
+  const [viewPage, setViewPage] = useState(true);
 
   return (
     <div>
@@ -27,7 +28,10 @@ function App() {
       {/* <Footer name={name}></Footer> */}
 
       {/* <Contactus contactDetails={contactDetails}></Contactus> */}
-      <LandingPage></LandingPage>
+
+      <Routes>
+        <Route path="/" element={<LandingPage />} />
+      </Routes>
     </div>
   );
 }
